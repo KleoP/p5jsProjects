@@ -1,26 +1,23 @@
+let colorArray = ["red", "orange", "yellow", "green", "blue", "purple"];
+
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(1500, 750);
+  noLoop();
 }
 
 function draw() {
   background(220);
   noStroke();
   
-  fill("red");
-  rect(0, 0, width, height / 6);
+ for (let i = 0; i <  6; i ++) {
+    fill(colorArray[i]);
+    rect(0, height * (i / 6), width, height / 6);
+  }
   
-  fill("orange");
-  rect(0, height / 6, width, height / 6);
-
-  fill("yellow");
-  rect(0,  height / 3, width, height / 6);
-  
-  fill("green");
-  rect(0,  height / 2, width, height / 6);
-
-  fill("blue");
-  rect(0,  height * (2 / 3), width, height / 6);
-  
-  fill("purple");
-  rect(0,  height * (5 / 6), width, height / 6);
+  for (let i = 5; i >= 0; i --) {
+    fill(colorArray[i]);
+    ellipse(width / 2, height + 75, 300 + (i * 100));
+  }
+  fill("gray");
+  ellipse(width / 2, height + 75, 200);
 }
